@@ -1,11 +1,11 @@
-export default class tsBackTimerLibrary {
+declare global {
+    interface Window {
+        tsBackTimer: any;
+    }
+}
+export default class TsBackTimerLibrary {
     private _container;
-    private _getAttackersArrival;
-    private _getDistance;
     constructor();
-    execution(): void;
-    set getAttackersArrival(arrival: string);
-    get getAttackersArrival(): string;
-    set getDistance(distance: string);
-    get getDistance(): string;
+    static init(tsBackTimer: TsBackTimerLibrary): void;
+    private execution;
 }

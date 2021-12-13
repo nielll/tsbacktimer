@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 class StaticTiming {
 }
@@ -11,12 +12,12 @@ class Timer {
         return `(${Math.floor(hours)}:${Math.floor(minutes)}:${Math.floor(seconds)})`;
     }
     static updateTimeDOM(id, autoReturnAt, element) {
-        var elapsingTime = new Date(this.now.getTime() + autoReturnAt.getTime());
-        var x = setInterval(function () {
-            var now = new Date().getTime();
-            document.getElementById(id).innerHTML = this.getMsFormated(elapsingTime.getTime() - this.now.getTime());
+        const elapsingTime = new Date(Timer.now.getTime() + autoReturnAt.getTime());
+        const x = setInterval(function () {
+            const now = new Date().getTime();
+            document.getElementById(id).innerHTML = Timer.getMsFormated(elapsingTime.getTime() - now);
             // If the count down is finished, click button
-            if (elapsingTime.getTime() - this.now.getTime() <= 0) {
+            if (elapsingTime.getTime() - now <= 0) {
                 clearInterval(x);
                 let button = element.getElementsByClassName("command-cancel")[0];
                 if (button)
@@ -26,4 +27,18 @@ class Timer {
     }
 }
 exports.default = Timer;
+_a = Timer;
 Timer.now = new Date(Date.now());
+Timer.correctTimeOffset = (date) => {
+    const timeZoneOffset = Timer.now.getTimezoneOffset() * 60 * 1000;
+    return new Date(date.getTime() - timeZoneOffset);
+};
+Timer.toString = () => {
+    const regexDate = /^.*\s/g;
+    const regexTime = /\s.*$/g;
+    const matchesDate = _a.now.toLocaleString().match(regexDate);
+    const matchesTime = _a.now.toLocaleString().match(regexTime);
+    const [day, month, year] = matchesDate[0].trim().split(".");
+    const [hour, minutes, seconds] = matchesTime[0].trim().split(":");
+    return `${day}.${month}.${year} ${hour}:${minutes}:${seconds}`;
+};

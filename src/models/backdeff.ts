@@ -6,8 +6,7 @@ interface IBackDeff {
  readonly departure: Date,
  readonly durationMs: number,
  readonly domElement: HTMLTableElement,
- readonly duration: string,
- execute: () => void
+ readonly duration: string
 }
 
 export default class BackDeff implements IBackDeff {
@@ -28,10 +27,6 @@ export default class BackDeff implements IBackDeff {
   this.durationMs = this.getDurationMs();
   this.departure = this.getDeparture();
   this.autoReturnAt = this.getAutoReturnAt();
- }
-
- public execute() {
-
  }
  
  private getDurationMs(): number {

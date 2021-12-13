@@ -5,7 +5,6 @@ interface IBackDeff {
     readonly durationMs: number;
     readonly domElement: HTMLTableElement;
     readonly duration: string;
-    execute: () => void;
 }
 export default class BackDeff implements IBackDeff {
     private readonly attacker;
@@ -16,7 +15,6 @@ export default class BackDeff implements IBackDeff {
     readonly duration: string;
     readonly arrival: Date;
     constructor(duration: string, arrival: string, attacker: Attacker);
-    execute(): void;
     private getDurationMs;
     private getDeparture;
     private generateMsFromRegex;

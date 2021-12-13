@@ -10,8 +10,6 @@ class BackDeff {
         this.departure = this.getDeparture();
         this.autoReturnAt = this.getAutoReturnAt();
     }
-    execute() {
-    }
     getDurationMs() {
         return this.generateMsFromRegex(this.duration);
     }

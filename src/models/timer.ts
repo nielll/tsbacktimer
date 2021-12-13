@@ -18,18 +18,35 @@ export default class Timer implements ITimer, StaticTiming {
  }
 
  public static updateTimeDOM(id: string, autoReturnAt: Date, element: HTMLTableRowElement) {
-  var elapsingTime = new Date(this.now.getTime() + autoReturnAt.getTime());
-  var x = setInterval(function() {
-    var now = new Date().getTime();
+  const elapsingTime = new Date(Timer.now.getTime() + autoReturnAt.getTime());
+  const x = setInterval(function() {
+    const now = new Date().getTime();
 
-    document.getElementById(id).innerHTML = this.getMsFormated(elapsingTime.getTime() - this.now.getTime());
+    document.getElementById(id).innerHTML = Timer.getMsFormated(elapsingTime.getTime() - now);
 
     // If the count down is finished, click button
-    if (elapsingTime.getTime() - this.now.getTime() <= 0) {
+    if (elapsingTime.getTime() - now <= 0) {
       clearInterval(x);
       let button: HTMLElement = element.getElementsByClassName("command-cancel")[0] as HTMLElement;
       if (button) button.click();
     }
   }, 1000);
+ }
+
+ public static correctTimeOffset = (date: Date) => {
+  const timeZoneOffset = Timer.now.getTimezoneOffset() * 60 * 1000;
+  return new Date(date.getTime() - timeZoneOffset);
+ }
+
+ public static toString = () : string => {
+  const regexDate = /^.*\s/g;
+  const regexTime = /\s.*$/g;
+  const matchesDate = this.now.toLocaleString().match(regexDate);
+  const matchesTime = this.now.toLocaleString().match(regexTime);
+
+  const [day, month, year] = matchesDate[0].trim().split(".");
+  const [hour,minutes,seconds] = matchesTime[0].trim().split(":");
+
+  return `${day}.${month}.${year} ${hour}:${minutes}:${seconds}`;
  }
 }

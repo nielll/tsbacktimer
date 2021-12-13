@@ -16,15 +16,18 @@ export default class Attacker implements IAttacker {
  }
 
  private getArrivalDate = (date: string) => {
+  if (!date) return;
   const regexDate = /^.*\s/g;
   const regexTime = /\s.*$/g;
-  const matchesDate = date.match(regexDate);
-  const matchesTime = date.match(regexTime);
+  const matchesDate = date.replace(',', '').match(regexDate);
+  const matchesTime = date.replace(',', '').match(regexTime);
 
   const attackerDateArr = matchesDate[0].trim().split(".");
   const attackTimeArr = matchesTime[0].trim().split(":");
 
-  return this.correctTimeOffset(
+  console.log(attackerDateArr, attackTimeArr);
+
+  return Timer.correctTimeOffset(
     new Date(new Date(
      Number(attackerDateArr[2]), 
      Number(attackerDateArr[1])-1, 
@@ -35,10 +38,5 @@ export default class Attacker implements IAttacker {
     ).setMilliseconds(
      Number(attackTimeArr[3])
     )));
- }
-
- private correctTimeOffset = (date: Date) => {
-  var timeZoneOffset = Timer.now.getTimezoneOffset() * 60 * 1000;
-  return new Date(date.getTime() - timeZoneOffset);
  }
 }

@@ -8,6 +8,5 @@ export default class Attacker implements IAttacker {
     readonly arrival: Date;
     constructor(arrival: string, coordinates?: string);
     private getArrivalDate;
-    private correctTimeOffset;
 }
 export {};
