@@ -29,7 +29,7 @@ class BackDeff {
         const attackersArrival = this.attacker.arrival;
         const msUntilAttack = attackersArrival.getTime() - timer_1.default.now.getTime();
         const msDeffAway = timer_1.default.now.getTime() - this.departure.getTime();
-        return new Date(timer_1.default.now.getTime() + ((msUntilAttack - msDeffAway) / 2));
+        return new Date(timer_1.default.now.getTime() + (msUntilAttack - msDeffAway) / 2);
     }
     generateDateFromString(date) {
         const regex = /\d+/g;
