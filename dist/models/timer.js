@@ -15,6 +15,7 @@ class Timer {
         const elapsingTime = new Date(Timer.now.getTime() + autoReturnAt.getTime());
         const x = setInterval(function () {
             const now = new Date().getTime();
+            console.log(Timer.getMsFormated(elapsingTime.getTime() - now), id, autoReturnAt, element);
             document.getElementById(id).innerHTML = Timer.getMsFormated(elapsingTime.getTime() - now);
             // If the count down is finished, click button
             if (elapsingTime.getTime() - now <= 0) {
