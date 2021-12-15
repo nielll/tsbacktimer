@@ -25,17 +25,15 @@ export default class Attacker implements IAttacker {
     const attackerDateArr = matchesDate[0].trim().split('.')
     const attackTimeArr = matchesTime[0].trim().split(':')
 
-    return Timer.correctTimeOffset(
+    return new Date(
       new Date(
-        new Date(
-          Number(attackerDateArr[2]),
-          Number(attackerDateArr[1]) - 1,
-          Number(attackerDateArr[0]),
-          Number(attackTimeArr[0]),
-          Number(attackTimeArr[1]),
-          Number(attackTimeArr[2])
-        ).setMilliseconds(Number(attackTimeArr[3]))
-      )
+        Number(attackerDateArr[2]),
+        Number(attackerDateArr[1]) - 1,
+        Number(attackerDateArr[0]),
+        Number(attackTimeArr[0]),
+        Number(attackTimeArr[1]),
+        Number(attackTimeArr[2])
+      ).setMilliseconds(Number(attackTimeArr[3]))
     )
   }
 }

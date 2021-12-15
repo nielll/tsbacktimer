@@ -1001,16 +1001,6 @@
               </tbody>
             </table>
 
-            <script>
-              setTimeout(function () {
-                $('#quickbar_contents')
-                  .find('.quickbar_image')
-                  .each(function () {
-                    this.src = $(this).data('src')
-                  })
-              }, 1)
-            </script>
-
             <hr class="oldStyleOnly" />
 
             <table id="header_info" align="center" width="100%" cellspacing="0">
@@ -1072,21 +1062,6 @@
                                     <b class="nowrap">(542|365) K35</b>
                                   </td>
                                   <td class="box-item">
-                                    <script type="text/javascript">
-                                      //<![CDATA[
-                                      villageDock.saveLink =
-                                        '/game.php?village=22595&screen=overview&ajaxaction=dockVillagelist&h=75336db0'
-                                      villageDock.loadLink =
-                                        '/game.php?village=22595&screen=groups&mode=overview&ajax=load_group_menu'
-                                      villageDock.docked = 0
-
-                                      $(function () {
-                                        if (villageDock.docked) {
-                                          villageDock.open()
-                                        }
-                                      })
-                                      //]]>
-                                    </script>
                                     <a
                                       href="#"
                                       id="open_groups"
@@ -2027,27 +2002,6 @@
                                                     height="30"
                                                   ></canvas>
                                                 </div>
-
-                                                <script>
-                                                  $(function () {
-                                                    new Visual(
-                                                      [
-                                                        'anim-building-main-3',
-                                                        'anim-building-farm-3',
-                                                        'anim-building-wood-prod',
-                                                        'anim-building-stone-prod',
-                                                        'anim-building-iron-prod',
-                                                        'anim-building-farm-prod',
-                                                        'anim-building-main-prod',
-                                                        'anim-building-barracks-prod',
-                                                        'anim-building-garage-prod',
-                                                        'anim-joker',
-                                                        'anim-convo',
-                                                      ],
-                                                      'night'
-                                                    )
-                                                  })
-                                                </script>
                                               </div>
                                             </div>
                                             <div
@@ -2260,11 +2214,10 @@
                                                           </span>
                                                         </td>
 
-                                                        <td>
-                                                          heute um
-                                                          <script>
-                                                            return '08:36:49'
-                                                          </script>
+                                                        <td
+                                                          class="arriving_time"
+                                                        >
+                                                          heute um '08:36:49'
                                                           :<span
                                                             class="grey small"
                                                             >866</span
@@ -2355,7 +2308,9 @@
                                                           </span>
                                                         </td>
 
-                                                        <td>
+                                                        <td
+                                                          class="arriving_time"
+                                                        >
                                                           heute um
                                                           08:36:50:<span
                                                             class="grey small"
@@ -2447,7 +2402,9 @@
                                                           </span>
                                                         </td>
 
-                                                        <td>
+                                                        <td
+                                                          class="arriving_time"
+                                                        >
                                                           heute um
                                                           08:36:50:<span
                                                             class="grey small"
@@ -2539,7 +2496,9 @@
                                                           </span>
                                                         </td>
 
-                                                        <td>
+                                                        <td
+                                                          class="arriving_time"
+                                                        >
                                                           heute um
                                                           08:36:50:<span
                                                             class="grey small"
@@ -2631,7 +2590,9 @@
                                                           </span>
                                                         </td>
 
-                                                        <td>
+                                                        <td
+                                                          class="arriving_time"
+                                                        >
                                                           heute um
                                                           09:15:18:<span
                                                             class="grey small"
@@ -2723,7 +2684,9 @@
                                                           </span>
                                                         </td>
 
-                                                        <td>
+                                                        <td
+                                                          class="arriving_time"
+                                                        >
                                                           heute um
                                                           09:15:18:<span
                                                             class="grey small"
@@ -2815,7 +2778,9 @@
                                                           </span>
                                                         </td>
 
-                                                        <td>
+                                                        <td
+                                                          class="arriving_time"
+                                                        >
                                                           heute um
                                                           09:15:18:<span
                                                             class="grey small"
@@ -2907,7 +2872,9 @@
                                                           </span>
                                                         </td>
 
-                                                        <td>
+                                                        <td
+                                                          class="arriving_time"
+                                                        >
                                                           heute um
                                                           09:15:18:<span
                                                             class="grey small"
@@ -2943,26 +2910,6 @@
                                                       </tr>
                                                     </tbody>
                                                   </table>
-
-                                                  <script>
-                                                    $(function () {
-                                                      $(
-                                                        '.quickedit-out'
-                                                      ).QuickEdit({
-                                                        show_icons: false,
-                                                        url: TribalWars.buildURL(
-                                                          'POST',
-                                                          'info_command',
-                                                          {
-                                                            ajaxaction:
-                                                              'edit_own_comment',
-                                                            id: '__ID__',
-                                                          }
-                                                        ),
-                                                      })
-                                                      Command.init()
-                                                    })
-                                                  </script>
                                                 </div>
                                               </div>
                                             </div>
@@ -3653,586 +3600,6 @@
                                                     </tr>
                                                   </tfoot>
                                                 </table>
-                                                <script>
-                                                  VillageOverview.units[0] = {
-                                                    spear: {
-                                                      id: 'spear',
-                                                      image:
-                                                        'unit\/unit_spear.png',
-                                                      type: 'infantry',
-                                                      prod_building: 'barracks',
-                                                      build_time: 637.5,
-                                                      wood: 50,
-                                                      stone: 30,
-                                                      iron: 10,
-                                                      pop: 1,
-                                                      speed: 0.000925925925925926,
-                                                      attack: 10,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 15,
-                                                      defense_cavalry: 45,
-                                                      defense_archer: 20,
-                                                      carry: 25,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 4,
-                                                      defpoints: 1,
-                                                      cost_modifier: 1,
-                                                      count: '1',
-                                                      name: 'Speertr\u00e4ger',
-                                                      shortname: 'Speer',
-                                                      desc: 'Der Speertr\u00e4ger ist die einfachste Einheit. Er ist besonders gut in der Verteidigung gegen Kavallerie.',
-                                                      desc_abilities: [],
-                                                    },
-                                                    sword: {
-                                                      id: 'sword',
-                                                      image:
-                                                        'unit\/unit_sword.png',
-                                                      type: 'infantry',
-                                                      prod_building: 'barracks',
-                                                      build_time: 937.5,
-                                                      wood: 30,
-                                                      stone: 30,
-                                                      iron: 70,
-                                                      pop: 1,
-                                                      speed: 0.0007575757575757576,
-                                                      attack: 25,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 50,
-                                                      defense_cavalry: 15,
-                                                      defense_archer: 40,
-                                                      carry: 15,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 5,
-                                                      defpoints: 2,
-                                                      cost_modifier: 1,
-                                                      count: '29',
-                                                      name: 'Schwertk\u00e4mpfer',
-                                                      shortname: 'Schwert',
-                                                      desc: 'Der Schwertk\u00e4mpfer ist eine relativ langsame Einheit zur Verteidigung, insbesondere gegen Infanterie.',
-                                                      desc_abilities: [],
-                                                    },
-                                                    axe: {
-                                                      id: 'axe',
-                                                      image:
-                                                        'unit\/unit_axe.png',
-                                                      type: 'infantry',
-                                                      prod_building: 'barracks',
-                                                      build_time: 825,
-                                                      wood: 60,
-                                                      stone: 30,
-                                                      iron: 40,
-                                                      pop: 1,
-                                                      speed: 0.000925925925925926,
-                                                      attack: 40,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 10,
-                                                      defense_cavalry: 5,
-                                                      defense_archer: 10,
-                                                      carry: 10,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 1,
-                                                      defpoints: 4,
-                                                      cost_modifier: 1,
-                                                      count: '3394',
-                                                      name: 'Axtk\u00e4mpfer',
-                                                      shortname: 'Axt',
-                                                      desc: 'Der Axtk\u00e4mpfer ist eine starke Offensiveinheit, aber in der Verteidigung ziemlich nutzlos.',
-                                                      desc_abilities: [],
-                                                    },
-                                                    spy: {
-                                                      id: 'spy',
-                                                      image:
-                                                        'unit\/unit_spy.png',
-                                                      type: 'other',
-                                                      prod_building: 'stable',
-                                                      build_time: 562.5,
-                                                      wood: 50,
-                                                      stone: 50,
-                                                      iron: 20,
-                                                      pop: 2,
-                                                      speed: 0.001851851851851852,
-                                                      attack: 0,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 2,
-                                                      defense_cavalry: 1,
-                                                      defense_archer: 2,
-                                                      carry: 0,
-                                                      stealth: 1,
-                                                      perception: 1,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 1,
-                                                      defpoints: 2,
-                                                      cost_modifier: 1,
-                                                      count: '371',
-                                                      name: 'Sp\u00e4her',
-                                                      shortname: 'Sp\u00e4h',
-                                                      desc: 'Der Sp\u00e4her schleicht sich in feindliche D\u00f6rfer ein, um Informationen zu erlangen.',
-                                                      desc_abilities: [
-                                                        'Sp\u00e4her werden bei einem eigenen Angriff nur durch andere Sp\u00e4her get\u00f6tet.',
-                                                        'Nach dem Angriff erh\u00e4lt man zus\u00e4tzliche Informationen im Kampfbericht.',
-                                                      ],
-                                                    },
-                                                    light: {
-                                                      id: 'light',
-                                                      image:
-                                                        'unit\/unit_light.png',
-                                                      type: 'cavalry',
-                                                      prod_building: 'stable',
-                                                      build_time: 1125,
-                                                      wood: 125,
-                                                      stone: 100,
-                                                      iron: 250,
-                                                      pop: 4,
-                                                      speed: 0.0016666666666666666,
-                                                      attack: 130,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 30,
-                                                      defense_cavalry: 40,
-                                                      defense_archer: 30,
-                                                      carry: 80,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 5,
-                                                      defpoints: 13,
-                                                      cost_modifier: 1,
-                                                      count: '5',
-                                                      name: 'Leichte Kavallerie',
-                                                      shortname: 'LKAV',
-                                                      desc: 'Die leichte Kavallerie ist vor allem geeignet, um \u00dcberraschungsangriffe auf gegnerische D\u00f6rfer durchzuf\u00fchren.',
-                                                      desc_abilities: [],
-                                                    },
-                                                    heavy: {
-                                                      id: 'heavy',
-                                                      image:
-                                                        'unit\/unit_heavy.png',
-                                                      type: 'cavalry',
-                                                      prod_building: 'stable',
-                                                      build_time: 2250,
-                                                      wood: 200,
-                                                      stone: 150,
-                                                      iron: 600,
-                                                      pop: 6,
-                                                      speed: 0.0015151515151515152,
-                                                      attack: 150,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 200,
-                                                      defense_cavalry: 80,
-                                                      defense_archer: 180,
-                                                      carry: 50,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 23,
-                                                      defpoints: 15,
-                                                      cost_modifier: 1,
-                                                      count: '100',
-                                                      name: 'Schwere Kavallerie',
-                                                      shortname: 'SKAV',
-                                                      desc: 'Die Schwere Kavallerie ist die Elite deiner Truppen. Ihre Geschwindigkeit erlaubt es dir, sie schnell als Unterst\u00fctzung in andere D\u00f6rfer zu verlegen',
-                                                      desc_abilities: [],
-                                                    },
-                                                    ram: {
-                                                      id: 'ram',
-                                                      image:
-                                                        'unit\/unit_ram.png',
-                                                      type: 'infantry',
-                                                      prod_building: 'garage',
-                                                      build_time: 3000,
-                                                      wood: 300,
-                                                      stone: 200,
-                                                      iron: 200,
-                                                      pop: 5,
-                                                      speed: 0.0005555555555555556,
-                                                      attack: 2,
-                                                      building_attack_multiplier: 1,
-                                                      additional_max_wall_negation: 0,
-                                                      defense: 20,
-                                                      defense_cavalry: 50,
-                                                      defense_archer: 20,
-                                                      carry: 0,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 4,
-                                                      defpoints: 8,
-                                                      cost_modifier: 1,
-                                                      count: '78',
-                                                      name: 'Rammbock',
-                                                      shortname: 'Ramme',
-                                                      desc: 'Rammen unterst\u00fctzen deine Truppen im Kampf, indem sie die Effektivit\u00e4t des Walls reduzieren und ihn besch\u00e4digen.',
-                                                      desc_abilities: [
-                                                        'Besch\u00e4digen den Wall und reduzieren dessen Effekt im Kampf',
-                                                      ],
-                                                    },
-                                                    knight: {
-                                                      id: 'knight',
-                                                      image:
-                                                        'unit\/unit_knight.png',
-                                                      type: 'cavalry',
-                                                      prod_building: 'statue',
-                                                      build_time: 13500,
-                                                      wood: 20,
-                                                      stone: 20,
-                                                      iron: 40,
-                                                      pop: 10,
-                                                      speed: 0.0016666666666666666,
-                                                      attack: 150,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 250,
-                                                      defense_cavalry: 400,
-                                                      defense_archer: 150,
-                                                      carry: 100,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 40,
-                                                      defpoints: 20,
-                                                      cost_modifier: 1,
-                                                      count: '1',
-                                                      name: 'Paladin',
-                                                      shortname: 'Pala',
-                                                      desc: 'Der Paladin ist eine starke, einzigartige Einheit, die die Geschwindigkeit deiner Einheiten erh\u00f6hen kann, wenn du Unterst\u00fctzung sendest.',
-                                                      desc_abilities: [
-                                                        'Unterst\u00fctzungseinheiten, die durch den Paladin begleitet werden, laufen mit der Geschwindigkeit des Paladins.',
-                                                      ],
-                                                    },
-                                                  }
-                                                  VillageOverview.units[1] = {
-                                                    spear: {
-                                                      id: 'spear',
-                                                      image:
-                                                        'unit\/unit_spear.png',
-                                                      type: 'infantry',
-                                                      prod_building: 'barracks',
-                                                      build_time: 637.5,
-                                                      wood: 50,
-                                                      stone: 30,
-                                                      iron: 10,
-                                                      pop: 1,
-                                                      speed: 0.000925925925925926,
-                                                      attack: 10,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 15,
-                                                      defense_cavalry: 45,
-                                                      defense_archer: 20,
-                                                      carry: 25,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 4,
-                                                      defpoints: 1,
-                                                      cost_modifier: 1,
-                                                      count: '1',
-                                                      name: 'Speertr\u00e4ger',
-                                                      shortname: 'Speer',
-                                                      desc: 'Der Speertr\u00e4ger ist die einfachste Einheit. Er ist besonders gut in der Verteidigung gegen Kavallerie.',
-                                                      desc_abilities: [],
-                                                    },
-                                                    sword: {
-                                                      id: 'sword',
-                                                      image:
-                                                        'unit\/unit_sword.png',
-                                                      type: 'infantry',
-                                                      prod_building: 'barracks',
-                                                      build_time: 937.5,
-                                                      wood: 30,
-                                                      stone: 30,
-                                                      iron: 70,
-                                                      pop: 1,
-                                                      speed: 0.0007575757575757576,
-                                                      attack: 25,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 50,
-                                                      defense_cavalry: 15,
-                                                      defense_archer: 40,
-                                                      carry: 15,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 5,
-                                                      defpoints: 2,
-                                                      cost_modifier: 1,
-                                                      count: '29',
-                                                      name: 'Schwertk\u00e4mpfer',
-                                                      shortname: 'Schwert',
-                                                      desc: 'Der Schwertk\u00e4mpfer ist eine relativ langsame Einheit zur Verteidigung, insbesondere gegen Infanterie.',
-                                                      desc_abilities: [],
-                                                    },
-                                                    axe: {
-                                                      id: 'axe',
-                                                      image:
-                                                        'unit\/unit_axe.png',
-                                                      type: 'infantry',
-                                                      prod_building: 'barracks',
-                                                      build_time: 825,
-                                                      wood: 60,
-                                                      stone: 30,
-                                                      iron: 40,
-                                                      pop: 1,
-                                                      speed: 0.000925925925925926,
-                                                      attack: 40,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 10,
-                                                      defense_cavalry: 5,
-                                                      defense_archer: 10,
-                                                      carry: 10,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 1,
-                                                      defpoints: 4,
-                                                      cost_modifier: 1,
-                                                      count: '3394',
-                                                      name: 'Axtk\u00e4mpfer',
-                                                      shortname: 'Axt',
-                                                      desc: 'Der Axtk\u00e4mpfer ist eine starke Offensiveinheit, aber in der Verteidigung ziemlich nutzlos.',
-                                                      desc_abilities: [],
-                                                    },
-                                                    archer: '0',
-                                                    spy: {
-                                                      id: 'spy',
-                                                      image:
-                                                        'unit\/unit_spy.png',
-                                                      type: 'other',
-                                                      prod_building: 'stable',
-                                                      build_time: 562.5,
-                                                      wood: 50,
-                                                      stone: 50,
-                                                      iron: 20,
-                                                      pop: 2,
-                                                      speed: 0.001851851851851852,
-                                                      attack: 0,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 2,
-                                                      defense_cavalry: 1,
-                                                      defense_archer: 2,
-                                                      carry: 0,
-                                                      stealth: 1,
-                                                      perception: 1,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 1,
-                                                      defpoints: 2,
-                                                      cost_modifier: 1,
-                                                      count: '371',
-                                                      name: 'Sp\u00e4her',
-                                                      shortname: 'Sp\u00e4h',
-                                                      desc: 'Der Sp\u00e4her schleicht sich in feindliche D\u00f6rfer ein, um Informationen zu erlangen.',
-                                                      desc_abilities: [
-                                                        'Sp\u00e4her werden bei einem eigenen Angriff nur durch andere Sp\u00e4her get\u00f6tet.',
-                                                        'Nach dem Angriff erh\u00e4lt man zus\u00e4tzliche Informationen im Kampfbericht.',
-                                                      ],
-                                                    },
-                                                    light: {
-                                                      id: 'light',
-                                                      image:
-                                                        'unit\/unit_light.png',
-                                                      type: 'cavalry',
-                                                      prod_building: 'stable',
-                                                      build_time: 1125,
-                                                      wood: 125,
-                                                      stone: 100,
-                                                      iron: 250,
-                                                      pop: 4,
-                                                      speed: 0.0016666666666666666,
-                                                      attack: 130,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 30,
-                                                      defense_cavalry: 40,
-                                                      defense_archer: 30,
-                                                      carry: 80,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 5,
-                                                      defpoints: 13,
-                                                      cost_modifier: 1,
-                                                      count: '5',
-                                                      name: 'Leichte Kavallerie',
-                                                      shortname: 'LKAV',
-                                                      desc: 'Die leichte Kavallerie ist vor allem geeignet, um \u00dcberraschungsangriffe auf gegnerische D\u00f6rfer durchzuf\u00fchren.',
-                                                      desc_abilities: [],
-                                                    },
-                                                    marcher: '0',
-                                                    heavy: {
-                                                      id: 'heavy',
-                                                      image:
-                                                        'unit\/unit_heavy.png',
-                                                      type: 'cavalry',
-                                                      prod_building: 'stable',
-                                                      build_time: 2250,
-                                                      wood: 200,
-                                                      stone: 150,
-                                                      iron: 600,
-                                                      pop: 6,
-                                                      speed: 0.0015151515151515152,
-                                                      attack: 150,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 200,
-                                                      defense_cavalry: 80,
-                                                      defense_archer: 180,
-                                                      carry: 50,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 23,
-                                                      defpoints: 15,
-                                                      cost_modifier: 1,
-                                                      count: '100',
-                                                      name: 'Schwere Kavallerie',
-                                                      shortname: 'SKAV',
-                                                      desc: 'Die Schwere Kavallerie ist die Elite deiner Truppen. Ihre Geschwindigkeit erlaubt es dir, sie schnell als Unterst\u00fctzung in andere D\u00f6rfer zu verlegen',
-                                                      desc_abilities: [],
-                                                    },
-                                                    ram: {
-                                                      id: 'ram',
-                                                      image:
-                                                        'unit\/unit_ram.png',
-                                                      type: 'infantry',
-                                                      prod_building: 'garage',
-                                                      build_time: 3000,
-                                                      wood: 300,
-                                                      stone: 200,
-                                                      iron: 200,
-                                                      pop: 5,
-                                                      speed: 0.0005555555555555556,
-                                                      attack: 2,
-                                                      building_attack_multiplier: 1,
-                                                      additional_max_wall_negation: 0,
-                                                      defense: 20,
-                                                      defense_cavalry: 50,
-                                                      defense_archer: 20,
-                                                      carry: 0,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 4,
-                                                      defpoints: 8,
-                                                      cost_modifier: 1,
-                                                      count: '78',
-                                                      name: 'Rammbock',
-                                                      shortname: 'Ramme',
-                                                      desc: 'Rammen unterst\u00fctzen deine Truppen im Kampf, indem sie die Effektivit\u00e4t des Walls reduzieren und ihn besch\u00e4digen.',
-                                                      desc_abilities: [
-                                                        'Besch\u00e4digen den Wall und reduzieren dessen Effekt im Kampf',
-                                                      ],
-                                                    },
-                                                    catapult: '0',
-                                                    knight: {
-                                                      id: 'knight',
-                                                      image:
-                                                        'unit\/unit_knight.png',
-                                                      type: 'cavalry',
-                                                      prod_building: 'statue',
-                                                      build_time: 13500,
-                                                      wood: 20,
-                                                      stone: 20,
-                                                      iron: 40,
-                                                      pop: 10,
-                                                      speed: 0.0016666666666666666,
-                                                      attack: 150,
-                                                      building_attack_multiplier:
-                                                        null,
-                                                      additional_max_wall_negation:
-                                                        null,
-                                                      defense: 250,
-                                                      defense_cavalry: 400,
-                                                      defense_archer: 150,
-                                                      carry: 100,
-                                                      stealth: 0,
-                                                      perception: 0,
-                                                      can_attack: true,
-                                                      can_support: true,
-                                                      attackpoints: 40,
-                                                      defpoints: 20,
-                                                      cost_modifier: 1,
-                                                      count: '1',
-                                                      name: 'Paladin',
-                                                      shortname: 'Pala',
-                                                      desc: 'Der Paladin ist eine starke, einzigartige Einheit, die die Geschwindigkeit deiner Einheiten erh\u00f6hen kann, wenn du Unterst\u00fctzung sendest.',
-                                                      desc_abilities: [
-                                                        'Unterst\u00fctzungseinheiten, die durch den Paladin begleitet werden, laufen mit der Geschwindigkeit des Paladins.',
-                                                      ],
-                                                    },
-                                                    snob: '0',
-                                                    militia: '0',
-                                                  }
-                                                  VillageOverview.units[2] = {
-                                                    spear: null,
-                                                    sword: null,
-                                                    axe: null,
-                                                    archer: null,
-                                                    spy: null,
-                                                    light: null,
-                                                    marcher: null,
-                                                    heavy: null,
-                                                    ram: null,
-                                                    catapult: null,
-                                                    knight: null,
-                                                    snob: null,
-                                                    militia: null,
-                                                  }
-                                                </script>
                                               </div>
                                             </div>
                                             <div
@@ -4451,22 +3818,6 @@
                                                     </tbody>
                                                   </table>
                                                 </div>
-
-                                                <script type="text/javascript">
-                                                  VillageGroups.showGroups(
-                                                    {
-                                                      result: [],
-                                                      village_id: 22595,
-                                                      group_id: '0',
-                                                      player_has_static_groups: false,
-                                                    },
-                                                    'group_assignment',
-                                                    false,
-                                                    function () {
-                                                      VillageOverview.refreshAMSettingsWidget()
-                                                    }
-                                                  )
-                                                </script>
                                               </div>
                                             </div>
                                             <div
@@ -4491,12 +3842,6 @@
                                                 class="widget_content"
                                                 style="display: block"
                                               >
-                                                <script>
-                                                  ;(function () {
-                                                    VillageOverview.show_notes = true
-                                                  })()
-                                                </script>
-
                                                 <table width="100%">
                                                   <tbody>
                                                     <tr
@@ -4565,24 +3910,6 @@
                                         cursor: move;
                                       }
                                     </style>
-
-                                    <script type="text/javascript">
-                                      //<![CDATA[
-                                      $(function () {
-                                        VillageOverview.urls.reorder =
-                                          '/game.php?village=22595&screen=overview&ajaxaction=reorder&&h=75336db0'
-                                        VillageOverview.urls.toggle =
-                                          '/game.php?village=22595&screen=overview&ajaxaction=toggle&&h=75336db0'
-                                        VillageOverview.unit_groups = [
-                                          'Alle',
-                                          'Besitzer',
-                                          'Andere',
-                                        ]
-                                        VillageOverview.unit_group_selected = 0
-                                        VillageOverview.init()
-                                      })
-                                      //]]>
-                                    </script>
                                   </td>
                                 </tr>
                               </tbody>
@@ -4921,18 +4248,20 @@
 
     <script>
       $(document).ready(function () {
-        Timing.init(1639377629.0127)
-        TribalWars.initTab('46d54e430c')
-
-        WorldSwitch.init()
-        WorldSwitch.worldsURL =
-          '/game.php?village=22595&screen=api&ajax=world_switch&'
-
-        HotKeys.init()
-
-        Connection.connect('de197.die-staemme.de', 8083, true)
-
-        DialogQueue.consume()
+        var arrivals = document.getElementsByClassName('arriving_time')
+        var now = new Date()
+        var time =
+          now.getHours() +
+          2 +
+          ':' +
+          now.getMinutes() +
+          ':' +
+          now.getSeconds() +
+          ':' +
+          now.getMilliseconds()
+        for (arrival of arrivals) {
+          arrival.innerHTML = 'heute um ' + time
+        }
       })
     </script>
 

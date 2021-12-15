@@ -4,17 +4,18 @@ const timer_1 = require("./timer");
 class BackDeff {
     constructor(duration, arrival, attacker) {
         this.attacker = attacker;
-        this.arrival = this.generateDateFromString(arrival);
+        this.arrival = this.generateTimeFromString(arrival);
         this.duration = duration;
-        this.durationMs = this.getDurationMs();
-        this.departure = this.getDeparture();
+        this.durationMs = this.getDurationMs(duration);
+        this.departure = this.getDeparture(duration);
         this.autoReturnAt = this.getAutoReturnAt();
+        console.log('arrival', arrival);
     }
-    getDurationMs() {
-        return this.generateMsFromRegex(this.duration);
+    getDurationMs(duration) {
+        return this.generateMsFromRegex(duration);
     }
-    getDeparture() {
-        return new Date(this.arrival.getTime() - this.durationMs);
+    getDeparture(duration) {
+        return new Date(this.arrival.getTime() - this.getDurationMs(duration));
     }
     generateMsFromRegex(time) {
         const regex = /\d+/g;
@@ -26,10 +27,17 @@ class BackDeff {
         return hours + minutes + seconds + ms;
     }
     getAutoReturnAt() {
-        const attackersArrival = this.attacker.arrival;
-        const msUntilAttack = attackersArrival.getTime() - timer_1.default.now.getTime();
-        const msDeffAway = timer_1.default.now.getTime() - this.departure.getTime();
-        return new Date(timer_1.default.now.getTime() + (msUntilAttack - msDeffAway) / 2);
+        return new Date(this.departure.getTime() +
+            (this.attacker.arrival.getTime() - this.departure.getTime()) / 2);
+    }
+    generateTimeFromString(date) {
+        const regex = /\d+/g;
+        const matches = date.match(regex);
+        const hours = Number(matches[0]);
+        const minutes = Number(matches[1]);
+        const seconds = Number(matches[2]);
+        const ms = Number(matches[3]) ? Number(matches[3]) : 0;
+        return new Date(new Date(timer_1.default.now.getFullYear(), timer_1.default.now.getMonth(), timer_1.default.now.getDate(), hours, minutes, seconds).setMilliseconds(ms));
     }
     generateDateFromString(date) {
         const regex = /\d+/g;

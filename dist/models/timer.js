@@ -15,13 +15,13 @@ class Timer {
         return `(${Math.floor(hours)}:${Math.floor(minutes)}:${Math.floor(seconds)})`;
     }
     static updateTimeDOM(id, autoReturnAt, element) {
-        const elapsingTime = new Date(Timer.now.getTime() + autoReturnAt.getTime());
+        const now = Timer.now.getTime();
+        const autoReturnMs = autoReturnAt.getTime() - now;
         const x = setInterval(function () {
-            const now = new Date().getTime();
-            console.log(Timer.getMsFormated(elapsingTime.getTime() - now), id, autoReturnAt, element);
-            document.getElementById(id).innerHTML = Timer.getMsFormated(elapsingTime.getTime() - now);
+            const timeNow = new Date().getTime();
+            document.getElementById(id).innerHTML = Timer.getMsFormated(autoReturnMs - (timeNow - now));
             // If the count down is finished, click button
-            if (elapsingTime.getTime() - now <= 0) {
+            if (autoReturnMs - (timeNow - now) <= 0) {
                 clearInterval(x);
                 let button = element.getElementsByClassName('command-cancel')[0];
                 if (button)

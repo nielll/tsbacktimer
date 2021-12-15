@@ -20,20 +20,21 @@ export default class BackDeff implements IBackDeff {
 
   constructor(duration: string, arrival: string, attacker: Attacker) {
     this.attacker = attacker
-    this.arrival = this.generateDateFromString(arrival)
+    this.arrival = this.generateTimeFromString(arrival)
     this.duration = duration
 
-    this.durationMs = this.getDurationMs()
-    this.departure = this.getDeparture()
+    this.durationMs = this.getDurationMs(duration)
+    this.departure = this.getDeparture(duration)
     this.autoReturnAt = this.getAutoReturnAt()
+    console.log('arrival', arrival)
   }
 
-  private getDurationMs(): number {
-    return this.generateMsFromRegex(this.duration)
+  private getDurationMs(duration: string): number {
+    return this.generateMsFromRegex(duration)
   }
 
-  private getDeparture(): Date {
-    return new Date(this.arrival.getTime() - this.durationMs)
+  private getDeparture(duration: string): Date {
+    return new Date(this.arrival.getTime() - this.getDurationMs(duration))
   }
 
   private generateMsFromRegex(time: string) {
@@ -49,11 +50,31 @@ export default class BackDeff implements IBackDeff {
   }
 
   private getAutoReturnAt() {
-    const attackersArrival = this.attacker.arrival
-    const msUntilAttack = attackersArrival.getTime() - Timer.now.getTime()
-    const msDeffAway = Timer.now.getTime() - this.departure.getTime()
+    return new Date(
+      this.departure.getTime() +
+        (this.attacker.arrival.getTime() - this.departure.getTime()) / 2
+    )
+  }
 
-    return new Date(Timer.now.getTime() + (msUntilAttack - msDeffAway) / 2)
+  private generateTimeFromString(date: string): Date {
+    const regex = /\d+/g
+    const matches = date.match(regex)
+
+    const hours = Number(matches[0])
+    const minutes = Number(matches[1])
+    const seconds = Number(matches[2])
+    const ms = Number(matches[3]) ? Number(matches[3]) : 0
+
+    return new Date(
+      new Date(
+        Timer.now.getFullYear(),
+        Timer.now.getMonth(),
+        Timer.now.getDate(),
+        hours,
+        minutes,
+        seconds
+      ).setMilliseconds(ms)
+    )
   }
 
   private generateDateFromString(date: string): Date {

@@ -19,6 +19,7 @@ export default class BackDeff implements IBackDeff {
     private getDeparture;
     private generateMsFromRegex;
     private getAutoReturnAt;
+    private generateTimeFromString;
     private generateDateFromString;
 }
 export {};

@@ -28,22 +28,17 @@ export default class Timer implements ITimer, StaticTiming {
     autoReturnAt: Date,
     element: HTMLTableRowElement
   ) {
-    const elapsingTime = new Date(Timer.now.getTime() + autoReturnAt.getTime())
-    const x = setInterval(function () {
-      const now = new Date().getTime()
+    const now = Timer.now.getTime()
+    const autoReturnMs = autoReturnAt.getTime() - now
 
-      console.log(
-        Timer.getMsFormated(elapsingTime.getTime() - now),
-        id,
-        autoReturnAt,
-        element
-      )
+    const x = setInterval(function () {
+      const timeNow = new Date().getTime()
       document.getElementById(id).innerHTML = Timer.getMsFormated(
-        elapsingTime.getTime() - now
+        autoReturnMs - (timeNow - now)
       )
 
       // If the count down is finished, click button
-      if (elapsingTime.getTime() - now <= 0) {
+      if (autoReturnMs - (timeNow - now) <= 0) {
         clearInterval(x)
         let button: HTMLElement = element.getElementsByClassName(
           'command-cancel'
